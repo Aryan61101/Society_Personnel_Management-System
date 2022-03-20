@@ -117,10 +117,10 @@
             } else {
                 $(".hide-message").text("")
             }
-            sendEmail(firstname, email, message);
+            sendEmail(firstname, email, mobile, message);
         })
 
-        function sendEmail(name, email, message) {
+        function sendEmail(name,email,mobile,message) {
             Email.send({
                 Host: "smtp.gmail.com",
                 Username: "helpforhire12345@gmail.com",
@@ -128,9 +128,9 @@
                 To: "helpforhire12345@gmail.com",
                 From: "helpforhire12345@gmail.com",
                 Subject: `${name} sent you a message `,
-                Body: `Name: ${name} <br/> Email: ${email} <br/> Message: ${message},`
+                Body: `Name: ${name} <br/> Email: ${email} <br/> Phone No.: ${mobile} <br/> Message: ${message}`
             }).then((message) => alert("Mail sent successfully"));
         }
     </script>
 </body>
-</htmml>
+</html>
