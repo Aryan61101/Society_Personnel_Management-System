@@ -54,3 +54,42 @@ if(!mobile.match(check_moblie)){
 }
 else{$(".hide-message").text("");}
 })
+
+function sendMail() {
+
+    //getting values from input fields
+  
+    var sender=Form.sender.value;
+  
+    var password=Form.password.value;
+  
+    var receiver=Form.reciever.value;
+  
+    var content=Form.content.value;
+  
+   
+    //Sending email
+  
+    Email.send({
+  
+    Host: "smtp.gmail.com",
+  
+    Username: sender,
+  
+    Password:password,
+  
+    To: receiver,
+  
+    From: sender,
+  
+    Subject: "Check Email Sending",
+  
+    Body: content,
+  
+    }).then(function (message) {
+  
+    alert("Email sent successfully")
+  
+    });
+  
+  }
