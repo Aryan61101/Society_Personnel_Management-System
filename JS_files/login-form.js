@@ -41,6 +41,10 @@ $(document).ready(function(){
         return false;
         }
         else{ $(".hide").text("");}
+     if (name != "admin"){
+          $(".hide").text("Wrong username");
+          return false;
+    }
     //username for login
     //pass for login
     var pass= $(".input-2").val();
@@ -50,6 +54,11 @@ $(document).ready(function(){
     }
     else{ $(".hide-1").text("");}
     })
+    if (pass != "admin1234"){
+        $(".hide-1").text("Wrong password");
+        return false;
+    }
+    
     //pass for login
                                                          //for sign-up btn
     $(".signup-button").click(function(){
